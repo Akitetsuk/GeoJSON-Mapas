@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+ <!--API que no s'ha pugut implementar per que no se separar les coordenades en 2 variables que utilitza la api
+esta detallat en aquest html el que fa la api i perque no s'ha pugut implementar en el script de js hi ha un petit intent i explicar
+el que falla --> 
+<html>
+<head> 
+    <meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+    <title>Maps JavaScript API</title>
+	<style> 
+  	  #map {
+        height: 100%;
+      }
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	</style> 
+</head>  
+	<body>
+		<div id ="map"> </div> 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
+	<script>
+        //aquesta es la api de gogle maps que utlitza un geojson per enseñar els punts en un mapa
+       // el que fem es mot simple primer la cridem al script src de dalt
+       
+
+        // , després creem el centre del mapa en aquest
+        //cas seria el centre de catalunya després li donem un zoom al mapa
+		
+      var map;
+  	 function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+		  center: {lat:41.83818476331067, lng: 1.5400597288349847 },
+          zoom: 13,
+        });
+
+        // en el var marker si lo que hi ha comentat en el fetch funciones correctament cridariem alla las varibles 
+        //on fica lat i lng 
+        var marker = new google.maps.Marker({
+          position: {lat:41.436345, lng:  1.495346},
+          map: map,
+        
+        });
+      }
+
+      
+	</script>
+
+	</body> 
+</html>
